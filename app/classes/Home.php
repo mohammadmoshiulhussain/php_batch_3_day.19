@@ -1,40 +1,42 @@
 <?php
 namespace App\classes;
+
 class Home
 {
     protected $number;
-    protected $i;
+    protected $primeNum;
     protected $check;
 
     public function __construct($post = null)
     {
         $this->number = $post['given_number'];
-        $this->check = 'Prime';
+        $this->check ='prime';
     }
 
     public function index()
-
-
     {
+
         header('Location: action.php?pages=home');
     }
-
     public function primeNumber()
     {
-        if ($this->number == 1 || $this->number == 2)
-        {
-            return "Your number $this->number is prime";
+        //btn value input
+        //echo $this->number;
+        if ($this->number ==1 ||$this->number ==2){
+            return "Your Number $this->number is prime";
         }
         else
         {
-            for ($this->i = 2; $this->i < $this->number; $this->i++)
+            for ($this->primeNum =2;$this->primeNum <$this->number;$this->primeNum++)
             {
-                if ($this->number%$this->i == 0)
+                if ($this->number%$this->primeNum ==0)
                 {
-                    return "Your number $this->number is not prime";
+                    return "Your Number $this->number is not prime";
                 }
             }
-            return "Your number $this->number is prime";
+            return "Your Number $this->number is prime";
         }
+
+
     }
 }
