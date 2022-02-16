@@ -1,6 +1,5 @@
 <?php
 namespace App\classes;
-
 class Home
 {
     protected $number;

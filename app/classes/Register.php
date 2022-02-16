@@ -1,6 +1,5 @@
 <?php
 namespace App\classes;
-
 class Register
 {
     protected $name;
@@ -8,10 +7,8 @@ class Register
     protected $mobile;
     protected $result;
 
-    public function __construct($post=null)
+    public function __construct($post =null)
     {
-//        echo'<pre/>';
-//        print_r($post);
         if (isset($post['full_name']))
         {
             $this->name =$post['full_name'];
@@ -22,8 +19,6 @@ class Register
     }
     public function add()
     {
-        //echo 'add';
-//        session_start();
         $_SESSION['name']=$this->name;
         $_SESSION['email']=$this->email;
         $_SESSION['mobile']=$this->mobile;
